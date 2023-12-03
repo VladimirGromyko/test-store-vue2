@@ -2,21 +2,15 @@
   <div class="header">
     <span>Обновление через:</span>
     <span style="width: 60px">{{ time }}</span>
-    <span @click="restartTimer">
-      <el-icon style="vertical-align: middle">
-        <Update style="color: #409eff"/>
-      </el-icon>
+    <span @click="restartTimer" >
+      <i class="el-icon-refresh" style="color: #409eff"></i>
     </span>
   </div>
 </template>
 
 <script>
-
-import Update from "../assets/icons/update.svg";
-
 export default {
   name: "Timer",
-  components: { Update },
   data() {
     return {
       timerValue: 15,
@@ -91,5 +85,8 @@ export default {
   gap: 10px;
   line-height: 32px;
   color: #909399;
+}
+.el-icon-refresh{
+  cursor: pointer;
 }
 </style>

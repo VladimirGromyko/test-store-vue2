@@ -1,9 +1,9 @@
 <template>
   <div>
     <el-table :data="getBasket.purchases" stripe empty-text="Корзина пуста" class="basket">
-      <el-table-column label="Раздел" width="130" >
+      <el-table-column label="Раздел" width="110" >
         <template #default="scope">
-          <el-button type="warning" size="small" plain class="group-name">
+          <el-button type="warning" size="mini" plain class="group-name">
             {{scope.row.groupName}}
           </el-button>
         </template>
@@ -11,23 +11,23 @@
       <el-table-column prop="product" label="Товар" min-width="200" />
       <el-table-column prop="quantity" label="Количество" align="center" min-width="80">
         <template #default="scope">
-          <el-button size="small">{{scope.row.quantity}}</el-button>
+          <el-button size="mini">{{scope.row.quantity}}</el-button>
         </template>
       </el-table-column>
       <el-table-column label="Стоимость" align="center" min-width="120">
         <template #default="scope">
-          <el-button :type="scope.row.priceChange" plain size="small" class="goods-price">
+          <el-button :type="scope.row.priceChange" plain size="mini" class="goods-price">
             ₽ {{scope.row.cost}}
           </el-button>
         </template>
       </el-table-column>
       <el-table-column label="Действие" min-width="60">
         <template #default="scope">
-          <el-button type="danger" size="small" @click.prevent="delPurchase(scope.row)">
-            <el-icon style="vertical-align: middle">
-              <Delete/>
-            </el-icon>
-          </el-button>
+          <el-button type="danger"
+                     size="mini"
+                     @click.prevent="delPurchase(scope.row)"
+                     icon="el-icon-delete"
+          />
         </template>
       </el-table-column>
     </el-table>
@@ -111,14 +111,8 @@ export default {
   font-weight: bold;
   font-size: 16px;
 }
-</style>
-<style lang="scss">
-.group-name{
-  width: 100px;
-  span{
-    white-space: normal;
-    width: 90px;
-    justify-content: center;
-  }
+.group-name.el-button--mini {
+  padding: 7px 4px;
+  white-space: pre-wrap;
 }
 </style>

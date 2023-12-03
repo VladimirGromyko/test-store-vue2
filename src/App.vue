@@ -1,9 +1,16 @@
 <template>
-  <TestStore />
+  <div id="app">
+    <TestStore />
+  </div>
 </template>
 
-<script setup>
+<script>
 import TestStore from "./components/TestStore.vue";
+export default {
+  components: {
+    TestStore,
+  },
+};
 </script>
 <style scoped>
 </style>
