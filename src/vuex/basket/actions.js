@@ -5,11 +5,8 @@ const actions = {
     delGoods({commit}, goods) {
         commit("DELETE_FROM_BASKET", goods);
     },
-    updateCurrency({commit}, newRate) {
-        commit("UPDATE_CURRENCY", newRate);
-    },
-    updateData({commit}, payload) {
-        commit("UPDATE_DATA", payload);
+    updateBasket({commit}, payload) {
+        commit("UPDATE_BASKET", payload);
     },
     changePurchases({commit}, change){
         commit("CHANGE_PURCHASES", change)
